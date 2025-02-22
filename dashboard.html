@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TimeWise - Dashboard</title>
+  <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <h1 class="welcome">Seja Bem vindo, Wiser *Nome_usuario</h1>
+
+    <!-- Cards de Resumo -->
+    <div class="cards">
+      <div class="card">
+        <h2>Total de Horas Lançadas</h2>
+        <p id="total-horas">0h</p>
+      </div>
+      <div class="card">
+        <h2>Projetos Ativos</h2>
+        <p id="projetos-ativos">0</p>
+      </div>
+      <!-- Mostradores de horas por projeto serão adicionados dinamicamente aqui -->
+      
+    </div>
+    <div class="cards">
+        <div id="cards-projetos"></div>
+
+    </div>
+    <!-- Formulário de Lançamento de Horas -->
+    <form id="lancamento-form">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="projeto">Projeto:</label>
+          <input type="text" id="projeto" list="projetos-list" required>
+          <datalist id="projetos-list"></datalist>
+        </div>
+        <div class="form-group">
+          <label for="atividade">Atividade:</label>
+          <input type="text" id="atividade" list="atividades-list" required>
+          <datalist id="atividades-list"></datalist>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="data-inicio">Data de Início:</label>
+          <input type="date" id="data-inicio" required>
+        </div>
+        <div class="form-group">
+          <label for="hora-inicio">Hora de Início:</label>
+          <input type="time" id="hora-inicio" required>
+        </div>
+        <div class="form-group">
+          <label for="hora-fim">Hora de Fim:</label>
+          <input type="time" id="hora-fim" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="descricao">Descrição:</label>
+          <textarea id="descricao" rows="3" required></textarea>
+        </div>
+      </div>
+      <button type="submit">Registrar</button>
+    </form>
+
+    <!-- Tabela de Lançamentos -->
+    <div class="lancamentos">
+      <h2>Lançamentos Registrados</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Projeto</th>
+            <th>Atividade</th>
+            <th>Data de Início</th>
+            <th>Hora de Início</th>
+            <th>Hora de Fim</th>
+            <th>Total de Horas</th>
+            <th>Descrição</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody id="lancamentos-body">
+          <!-- Linhas serão adicionadas dinamicamente via JavaScript -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="scripts/main.js"></script>
+</body>
+</html>
