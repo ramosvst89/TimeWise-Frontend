@@ -6,10 +6,8 @@
     <title>TimeWise - Login</title>
     <link rel="stylesheet" href="styles/styles.css">
     <style>
-        
         .login-container {
-            background-color: rgba(255, 255, 255, 0.8); 
-            
+            background-color: rgba(255, 255, 255, 0.8);
         }
     </style>
 </head>
@@ -31,6 +29,12 @@
             </form>
         </div>
     </div>
-    <script src="scripts/main.js"></script>
+
+    <script>
+        document.getElementById("login-form").addEventListener("submit", function(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            window.location.href = "/dashboard.html"; // Redireciona para o dashboard
+        });
+    </script>
 </body>
-</html></div>
+</html>
