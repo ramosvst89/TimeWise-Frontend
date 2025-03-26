@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - TimeWise</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#gerenciamento">Gerenciamento</a></li>
+        </ul>
+    </nav>
+
+    <div id="dashboard" class="content">
+        <h1>Dashboard</h1>
+        <div class="dashboard-content">
+            <div class="card">
+                <h2>Total de Horas</h2>
+                <p id="total-horas">0:00</p>
+            </div>
+            <div class="card">
+                <h2>Projetos Ativos</h2>
+                <p id="projetos-ativos">0</p>
+            </div>
+            <div id="cards-projetos" class="cards-container"></div>
+        </div>
+    </div>
+
+    <div id="gerenciamento" class="content hidden">
+        <h1>Gerenciamento</h1>
+        <div class="management-content">
+            <div class="card">
+                <h2>Gerenciar Usuários</h2>
+                <form id="form-usuario">
+                    <input type="text" id="nome-usuario" placeholder="Nome do Usuário" required>
+                    <input type="email" id="email-usuario" placeholder="E-mail do Usuário" required>
+                    <input type="password" id="senha-usuario" placeholder="Senha do Usuário" required>
+                    <select id="perfil-usuario" required>
+                        <option value="ADMIN">Admin</option>
+                        <option value="USUARIO">Usuário</option>
+                    </select>
+                    <button type="submit">Adicionar Usuário</button>
+                </form>
+                <div id="lista-usuarios"></div>
+            </div>
+
+            <div class="card">
+                <h2>Gerenciar Projetos</h2>
+                <form id="form-projeto">
+                    <input type="text" id="nome-projeto" placeholder="Nome do Projeto" required>
+                    <textarea id="descricao-projeto" placeholder="Descrição do Projeto"></textarea>
+                    <input type="date" id="data-inicio-projeto" required>
+                    <input type="date" id="data-fim-projeto" required>
+                    <select id="status-projeto" required>
+                        <option value="PLANEJADO">Planejado</option>
+                        <option value="EM_ANDAMENTO">Em Andamento</option>
+                        <option value="CONCLUIDO">Concluído</option>
+                        <option value="CANCELADO">Cancelado</option>
+                    </select>
+                    <select id="prioridade-projeto" required>
+                        <option value="ALTA">Alta</option>
+                        <option value="MEDIA">Média</option>
+                        <option value="BAIXA">Baixa</option>
+                    </select>
+                    <button type="submit">Adicionar Projeto</button>
+                </form>
+                <div id="lista-projetos"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
